@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+	<query name="Login.findUser">
+		Select usercode from userlogin Where usercode = :usercode 
+		and password = :password
+	</query>
+	<query name="Save.Book">
+	insert into book(title, author, coverPhotoURL, isbnNumber, price, language, genre,moddt) 
+	values(:title,:author,:coverPhotoURL,:isbnNumber,:price,:language,:genre,Now()) on duplicate key update moddt=now()
+	</query>
+</queries>
